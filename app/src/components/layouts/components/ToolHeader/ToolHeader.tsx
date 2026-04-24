@@ -1,32 +1,51 @@
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Box } from 'lucide-react'
+import { Box, Star } from 'lucide-react'
+import './ToolHeader.scss'
 
 const APP_NAME = import.meta.env.VITE_APP_TITLE_UP
+const GITHUB_REPO = import.meta.env.VITE_GITHUB_REPO || 'zeMinng/quick-kit'
 
 const ToolHeader: React.FC = () => {
   const navigate = useNavigate()
+  const [starCount, setStarCount] = useState<string>('--')
+  const githubRepoUrl = useMemo(() => `https://github.com/${GITHUB_REPO}`, [])
+  
+  useEffect(() => {
+    const loadStars = async () => {
+      const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}`, {
+        headers: {
+          Accept: 'application/vnd.github.v3+json',
+        },
+      })
+      .then(res => res.json())
+      .catch(() => {
+        setStarCount('--')
+        throw new Error('Failed to fetch repository data')
+      })
+      const stars = res?.stargazers_count ?? '--'
+      setStarCount(stars)
+    }
+    
+    loadStars()
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[var(--app-border)] bg-[color:color-mix(in_oklab,var(--app-bg)_85%,transparent)] backdrop-blur-md">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="flex items-center gap-6">
-          <div 
-            className="flex items-center gap-2.5 cursor-pointer group" 
-            onClick={() => navigate('/')}
-          >
-            <div className="bg-[var(--app-primary)] p-1.5 rounded-xl group-hover:rotate-12 transition-transform duration-300 shadow-[var(--app-shadow-sm)]">
-              <Box className="h-5 w-5 text-[var(--app-primary-fg)]" />
-            </div>
-            <span className="font-bold text-xl tracking-tight text-[var(--app-fg)]">{APP_NAME}</span>
+    <header className="tool-header">
+      <div className="tool-header__inner">
+        <button type="button" className="tool-header__brand" onClick={() => navigate('/')}>
+          <div className="tool-header__logo">
+            <Box size={18} />
           </div>
-          
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--app-muted-fg)]">
-            <button className="hover:text-[var(--app-primary)] transition-colors">配置</button>
-          </nav>
-        </div>
+          <span className="tool-header__title">{APP_NAME}</span>
+        </button>
 
-        <div className="flex items-center gap-6">
-          <span className="text-sm text-[var(--app-muted-fg)]">最近更新: {__BUILD_TIME__}</span>
+        <div className="tool-header__meta">
+          <a className="tool-header__star" href={githubRepoUrl} target="_blank" rel="noreferrer">
+            <Star size={14} />
+            <span>{starCount}</span>
+          </a>
+          <span className="tool-header__build">最近更新: {__BUILD_TIME__}</span>
         </div>
       </div>
     </header>

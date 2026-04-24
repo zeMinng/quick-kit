@@ -16,18 +16,18 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-page">
-      <section className="flex flex-col items-center justify-center py-20 md:py-32 space-y-8 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/30 text-orange-600 text-[11px] font-bold tracking-widest uppercase border border-orange-100 dark:border-orange-900/50">
+      <section className="home-intro">
+        <div className="home-intro__badge">
           <Sparkles className="h-3 w-3" />
           QuickKit v1.0
         </div>
-        
-        <div className="space-y-4 max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+
+        <div className="home-intro__copy">
+          <h1 className="home-intro__title">
             为开发者设计的效率中枢 <br />
-            <span className="text-orange-600">极简全能工具箱</span>
+            <span>极简全能工具箱</span>
           </h1>
-          <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-xl mx-auto leading-relaxed">
+          <p className="home-intro__desc">
             无需上传，本地处理。极致性能与隐私安全的完美平衡。
           </p>
         </div>
@@ -66,39 +66,33 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-20 grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div className="flex gap-4">
-          <div className="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-950/30 flex items-center justify-center text-orange-600 shrink-0">
+      <section className="home-values">
+        <div className="value-card">
+          <div className="value-card__head">
+            <div className="value-card__icon">
             <Zap className="h-5 w-5" />
+            </div>
+            <h3>极致响应</h3>
           </div>
-          <div className="space-y-1">
-            <h3 className="font-bold text-sm">极致响应</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              零延迟本地处理，所有操作均在浏览器中完成。
-            </p>
-          </div>
+          <p>零延迟本地处理，所有操作均在浏览器中完成。</p>
         </div>
-        <div className="flex gap-4">
-          <div className="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-950/30 flex items-center justify-center text-orange-600 shrink-0">
+        <div className="value-card">
+          <div className="value-card__head">
+            <div className="value-card__icon">
             <ShieldCheck className="h-5 w-5" />
+            </div>
+            <h3>隐私至上</h3>
           </div>
-          <div className="space-y-1">
-            <h3 className="font-bold text-sm">隐私至上</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              无服务器设计，您的文件永不离开您的设备。
-            </p>
-          </div>
+          <p>无服务器设计，您的文件永不离开您的设备。</p>
         </div>
-        <div className="flex gap-4">
-          <div className="w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-950/30 flex items-center justify-center text-orange-600 shrink-0">
+        <div className="value-card">
+          <div className="value-card__head">
+            <div className="value-card__icon">
             <Cpu className="h-5 w-5" />
+            </div>
+            <h3>现代架构</h3>
           </div>
-          <div className="space-y-1">
-            <h3 className="font-bold text-sm">现代架构</h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              基于 React 19 构建，享受最前沿的 Web 性能。
-            </p>
-          </div>
+          <p>基于 React 19 构建，享受最前沿的 Web 性能。</p>
         </div>
       </section>
     </div>

@@ -3,57 +3,61 @@
   --app-font-sans: 'Geist Variable', geist, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif;
 
   /* Surface */
-  --app-bg: var(--background, #fff);
-  --app-fg: var(--foreground, #0f172a);
-  --app-card: var(--card, #fff);
-  --app-card-fg: var(--card-foreground, #0f172a);
-  --app-popover: var(--popover, #fff);
-  --app-popover-fg: var(--popover-foreground, #0f172a);
+  --app-bg: #f8fafc;
+  --app-bg-soft: #f1f5f9;
+  --app-fg: #0f172a;
+  --app-card: #fff;
+  --app-card-fg: #0f172a;
+  --app-popover: #fff;
+  --app-popover-fg: #0f172a;
 
   /* Brand / actions */
-  --app-primary: var(--primary, #111827);
-  --app-primary-fg: var(--primary-foreground, #f8fafc);
-  --app-secondary: var(--secondary, #f1f5f9);
-  --app-secondary-fg: var(--secondary-foreground, #111827);
-  --app-accent: var(--accent, #f1f5f9);
-  --app-accent-fg: var(--accent-foreground, #111827);
-  --app-muted: var(--muted, #f1f5f9);
-  --app-muted-fg: var(--muted-foreground, #64748b);
-  --app-danger: var(--destructive, #dc2626);
+  --app-primary: #2563eb;
+  --app-primary-soft: #60a5fa;
+  --app-primary-fg: #fff;
+  --app-secondary: #e2e8f0;
+  --app-secondary-fg: #0f172a;
+  --app-accent: #dbeafe;
+  --app-accent-fg: #1e3a8a;
+  --app-muted: #f1f5f9;
+  --app-muted-fg: #64748b;
+  --app-danger: #dc2626;
 
   /* UI states */
-  --app-border: var(--border, #e2e8f0);
-  --app-input: var(--input, #e2e8f0);
-  --app-ring: var(--ring, #94a3b8);
+  --app-border: #dbe4f0;
+  --app-input: #dbe4f0;
+  --app-ring: #93c5fd;
   --app-selection-fg: #2563eb;
   --app-selection-bg: rgb(37 99 235 / 10%);
 
   /* Shadow / depth */
-  --app-shadow-sm: 0 1px 2px rgb(15 23 42 / 6%);
-  --app-shadow-md: 0 8px 24px rgb(15 23 42 / 8%);
+  --app-shadow-sm: 0 2px 8px rgb(15 23 42 / 8%);
+  --app-shadow-md: 0 12px 28px rgb(15 23 42 / 12%);
 }
 
 .dark {
-  --app-bg: var(--background, #0f172a);
-  --app-fg: var(--foreground, #f8fafc);
-  --app-card: var(--card, #1e293b);
-  --app-card-fg: var(--card-foreground, #f8fafc);
-  --app-popover: var(--popover, #1e293b);
-  --app-popover-fg: var(--popover-foreground, #f8fafc);
-  --app-primary: var(--primary, #e2e8f0);
-  --app-primary-fg: var(--primary-foreground, #0f172a);
-  --app-secondary: var(--secondary, #334155);
-  --app-secondary-fg: var(--secondary-foreground, #f8fafc);
-  --app-accent: var(--accent, #334155);
-  --app-accent-fg: var(--accent-foreground, #f8fafc);
-  --app-muted: var(--muted, #334155);
-  --app-muted-fg: var(--muted-foreground, #94a3b8);
-  --app-danger: var(--destructive, #f43f5e);
-  --app-border: var(--border, rgb(255 255 255 / 10%));
-  --app-input: var(--input, rgb(255 255 255 / 15%));
-  --app-ring: var(--ring, #94a3b8);
+  --app-bg: #020617;
+  --app-bg-soft: #0f172a;
+  --app-fg: #f8fafc;
+  --app-card: #0f172a;
+  --app-card-fg: #f8fafc;
+  --app-popover: #0f172a;
+  --app-popover-fg: #f8fafc;
+  --app-primary: #60a5fa;
+  --app-primary-soft: #93c5fd;
+  --app-primary-fg: #0b1120;
+  --app-secondary: #1e293b;
+  --app-secondary-fg: #f8fafc;
+  --app-accent: #1e3a8a;
+  --app-accent-fg: #dbeafe;
+  --app-muted: #1e293b;
+  --app-muted-fg: #94a3b8;
+  --app-danger: #f43f5e;
+  --app-border: rgb(148 163 184 / 24%);
+  --app-input: rgb(148 163 184 / 26%);
+  --app-ring: #60a5fa;
   --app-selection-fg: #60a5fa;
   --app-selection-bg: rgb(96 165 250 / 18%);
-  --app-shadow-sm: 0 1px 2px rgb(2 6 23 / 28%);
-  --app-shadow-md: 0 10px 30px rgb(2 6 23 / 36%);
+  --app-shadow-sm: 0 2px 8px rgb(2 6 23 / 32%);
+  --app-shadow-md: 0 14px 34px rgb(2 6 23 / 44%);
 }

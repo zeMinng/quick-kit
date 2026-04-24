@@ -1,9 +1,30 @@
 .footer {
-  padding: 2rem 0;
-  text-align: center;
+  padding: 2rem 1rem 2.25rem;
+  margin-top: auto;
+  background: var(--app-bg-soft);
   border-top: 1px solid var(--app-border);
 
+  &__inner {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--app-fg);
+  }
+
+  &__desc {
+    margin: 0.45rem 0 0;
+    font-size: 0.8rem;
+    color: var(--app-muted-fg);
+  }
+
   &__text {
+    margin: 0.85rem 0 0;
     font-size: 0.75rem;
     color: var(--app-muted-fg);
   }
