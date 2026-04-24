@@ -1,0 +1,294 @@
+.home-page {
+  display: flex;
+  width: 100%;
+  max-width: 1160px;
+  padding: 1.2rem 1rem;
+  margin: 0 auto;
+  color: var(--app-fg);
+  flex: 1;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.home-hero-panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: minmax(0, 1.6fr) minmax(250px, 1fr);
+}
+
+.home-hero {
+  position: relative;
+  padding: 1.25rem;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, color-mix(in oklab, var(--app-card) 72%, transparent), color-mix(in oklab, var(--app-bg) 80%, transparent));
+  border: 1px solid color-mix(in oklab, var(--app-border) 72%, transparent);
+  border-radius: calc(var(--app-radius) * 1.1);
+
+  &__eyebrow {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: color-mix(in oklab, var(--app-primary) 58%, var(--app-muted-fg));
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 0.65rem 0 0;
+    font-size: clamp(1.65rem, 3.1vw, 2.45rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  &__desc {
+    max-width: 54ch;
+    margin: 0.95rem 0 0;
+    font-size: 0.94rem;
+    line-height: 1.62;
+    color: var(--app-muted-fg);
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+  }
+}
+
+.home-signal {
+  display: flex;
+  padding: 1rem;
+  background:
+    radial-gradient(240px 120px at 100% 0, color-mix(in oklab, var(--app-primary) 12%, transparent), transparent 66%),
+    color-mix(in oklab, var(--app-card) 90%, transparent);
+  border: 1px solid color-mix(in oklab, var(--app-border) 72%, transparent);
+  border-radius: calc(var(--app-radius) * 1.1);
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9rem;
+
+  &__title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--app-muted-fg);
+    text-transform: uppercase;
+  }
+
+  &__items {
+    display: grid;
+    gap: 0.55rem;
+
+    div {
+      display: flex;
+      padding: 0.55rem 0.65rem;
+      background: color-mix(in oklab, var(--app-bg) 45%, var(--app-card));
+      border: 1px solid color-mix(in oklab, var(--app-border) 72%, transparent);
+      border-radius: calc(var(--app-radius) * 0.8);
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    strong {
+      font-size: 1.05rem;
+      letter-spacing: -0.03em;
+    }
+
+    span {
+      font-size: 0.72rem;
+      color: var(--app-muted-fg);
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: var(--app-muted-fg);
+  }
+}
+
+.home-tools {
+  padding: 1rem 1rem 1.05rem;
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.85rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    span {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: var(--app-muted-fg);
+      text-transform: uppercase;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-auto-rows: minmax(106px, auto);
+    gap: 0.6rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.tool-card {
+  position: relative;
+  display: flex;
+  min-height: 106px;
+  padding: 0.8rem;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  background:
+    linear-gradient(140deg, color-mix(in oklab, var(--app-card) 84%, transparent), color-mix(in oklab, var(--app-bg) 74%, transparent));
+  border: 1px solid color-mix(in oklab, var(--app-border) 78%, transparent);
+  border-radius: calc(var(--app-radius) * 1);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &:hover {
+    border-color: var(--app-ring);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgb(15 23 42 / 8%);
+  }
+
+  &__icon {
+    display: inline-flex;
+    width: 1.9rem;
+    height: 1.9rem;
+    color: color-mix(in oklab, var(--app-primary) 76%, var(--app-fg));
+    background: color-mix(in oklab, var(--app-primary) 14%, transparent);
+    border-radius: calc(var(--app-radius) * 0.85);
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0.25rem 0 0;
+      font-size: 0.75rem;
+      line-height: 1.4;
+      color: var(--app-muted-fg);
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    color: var(--app-muted-fg);
+  }
+}
+
+.tool-card--large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.tool-card--wide {
+  grid-column: span 2;
+}
+
+.home-values {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.6rem;
+  overflow: hidden;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.value-card {
+  padding: 0.9rem 1rem;
+  background: color-mix(in oklab, var(--app-card) 88%, transparent);
+  border: 1px solid color-mix(in oklab, var(--app-border) 78%, transparent);
+  border-radius: calc(var(--app-radius) * 1);
+  box-shadow: 0 8px 24px rgb(15 23 42 / 4%);
+
+  &__tag {
+    display: inline-flex;
+    margin-bottom: 0.4rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--app-muted-fg);
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    margin: 0.4rem 0 0;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: var(--app-muted-fg);
+  }
+}
+
+@media (width <= 900px) {
+  .home-page {
+    padding: 0.85rem;
+  }
+
+  .home-hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    padding: 1rem;
+  }
+
+  .home-tools__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-values {
+    gap: 0.5rem;
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 640px) {
+  .home-tools__header span {
+    display: none;
+  }
+
+  .home-tools__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-card--large,
+  .tool-card--wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}

@@ -1,0 +1,59 @@
+:root {
+  --app-radius: 0.625rem;
+  --app-font-sans: 'Geist Variable', geist, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif;
+
+  /* Surface */
+  --app-bg: var(--background, #fff);
+  --app-fg: var(--foreground, #0f172a);
+  --app-card: var(--card, #fff);
+  --app-card-fg: var(--card-foreground, #0f172a);
+  --app-popover: var(--popover, #fff);
+  --app-popover-fg: var(--popover-foreground, #0f172a);
+
+  /* Brand / actions */
+  --app-primary: var(--primary, #111827);
+  --app-primary-fg: var(--primary-foreground, #f8fafc);
+  --app-secondary: var(--secondary, #f1f5f9);
+  --app-secondary-fg: var(--secondary-foreground, #111827);
+  --app-accent: var(--accent, #f1f5f9);
+  --app-accent-fg: var(--accent-foreground, #111827);
+  --app-muted: var(--muted, #f1f5f9);
+  --app-muted-fg: var(--muted-foreground, #64748b);
+  --app-danger: var(--destructive, #dc2626);
+
+  /* UI states */
+  --app-border: var(--border, #e2e8f0);
+  --app-input: var(--input, #e2e8f0);
+  --app-ring: var(--ring, #94a3b8);
+  --app-selection-fg: #2563eb;
+  --app-selection-bg: rgb(37 99 235 / 10%);
+
+  /* Shadow / depth */
+  --app-shadow-sm: 0 1px 2px rgb(15 23 42 / 6%);
+  --app-shadow-md: 0 8px 24px rgb(15 23 42 / 8%);
+}
+
+.dark {
+  --app-bg: var(--background, #0f172a);
+  --app-fg: var(--foreground, #f8fafc);
+  --app-card: var(--card, #1e293b);
+  --app-card-fg: var(--card-foreground, #f8fafc);
+  --app-popover: var(--popover, #1e293b);
+  --app-popover-fg: var(--popover-foreground, #f8fafc);
+  --app-primary: var(--primary, #e2e8f0);
+  --app-primary-fg: var(--primary-foreground, #0f172a);
+  --app-secondary: var(--secondary, #334155);
+  --app-secondary-fg: var(--secondary-foreground, #f8fafc);
+  --app-accent: var(--accent, #334155);
+  --app-accent-fg: var(--accent-foreground, #f8fafc);
+  --app-muted: var(--muted, #334155);
+  --app-muted-fg: var(--muted-foreground, #94a3b8);
+  --app-danger: var(--destructive, #f43f5e);
+  --app-border: var(--border, rgb(255 255 255 / 10%));
+  --app-input: var(--input, rgb(255 255 255 / 15%));
+  --app-ring: var(--ring, #94a3b8);
+  --app-selection-fg: #60a5fa;
+  --app-selection-bg: rgb(96 165 250 / 18%);
+  --app-shadow-sm: 0 1px 2px rgb(2 6 23 / 28%);
+  --app-shadow-md: 0 10px 30px rgb(2 6 23 / 36%);
+}

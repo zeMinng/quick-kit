@@ -1,0 +1,10 @@
+.footer {
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--app-border);
+
+  &__text {
+    font-size: 0.75rem;
+    color: var(--app-muted-fg);
+  }
+}

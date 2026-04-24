@@ -1,0 +1,18 @@
+{
+  "name": "quick-kit",
+  "version": "1.0.0",
+  "description": "QuickKit | 在线实用快速工具箱",
+  "scripts": {
+    "prepare": "pnpm --prefix app install",
+    "dev": "pnpm --prefix app dev",
+    "dev:rust": "cargo run --manifest-path engines/Cargo.toml",
+    "clean": "rm -rf app/dist engines/target",
+    "lint": "pnpm --prefix app lint"
+  },
+  "keywords": ["quick-kit"],
+  "author": "zeMinng",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
