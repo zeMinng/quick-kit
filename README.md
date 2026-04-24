@@ -36,21 +36,12 @@
 ### 2. 启动项目
 
 ```bash
-# 克隆仓库
-git clone 你的仓库地址
-
 # 安装依赖
 pnpm install
 
 # 开启开发服务器
 pnpm dev
 ```
-
-## 🧩 Monorepo 结构
-
-- `apps/web`: Web 应用（React + Vite）
-- `packages/ui`: 共享 UI 组件与样式
-- `engines`: Rust 引擎（预留 Wasm 方向）
 
 ## 🤝 贡献与反馈
 

@@ -3,7 +3,6 @@ import { Box } from 'lucide-react'
 
 const APP_NAME = import.meta.env.VITE_APP_TITLE_UP
 
-
 const ToolHeader: React.FC = () => {
   const navigate = useNavigate()
 
@@ -23,7 +22,6 @@ const ToolHeader: React.FC = () => {
           
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--app-muted-fg)]">
             <button className="hover:text-[var(--app-primary)] transition-colors">配置</button>
-            <button className="hover:text-[var(--app-primary)] transition-colors">插件</button>
           </nav>
         </div>
 
