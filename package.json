@@ -6,6 +6,7 @@
     "prepare": "pnpm --prefix app install",
     "dev": "pnpm --prefix app dev",
     "dev:rust": "cargo run --manifest-path engines/Cargo.toml",
+    "build": "pnpm --prefix app build",
     "clean": "rm -rf app/dist engines/target",
     "lint": "pnpm --prefix app lint"
   },
