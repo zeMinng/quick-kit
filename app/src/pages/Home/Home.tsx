@@ -38,34 +38,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="home-tools">
-        <div className="home-tools__header">
-          <h2>常用工具</h2>
-        </div>
-        <div className="home-tools__grid">
-          {quickTools.map((tool) => {
-            const Icon = tool.icon
-            return (
-              <button
-                key={tool.title}
-                className={`tool-card tool-card--${tool.size}`}
-                type="button"
-                onClick={() => tool.path && navigate(tool.path)}
-              >
-                <span className="tool-card__icon">
-                  <Icon size={16} />
-                </span>
-                <div className="tool-card__content">
-                  <strong>{tool.title}</strong>
-                  <p>{tool.description}</p>
-                </div>
-                <ArrowUpRight size={14} className="tool-card__arrow" />
-              </button>
-            )
-          })}
-        </div>
-      </section>
-
       <section className="home-values">
         <div className="value-card">
           <div className="value-card__head">

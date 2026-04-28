@@ -3,36 +3,36 @@
   --app-font-sans: 'Geist Variable', geist, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif;
 
   /* Surface */
-  --app-bg: #f8fafc;
-  --app-bg-soft: #f1f5f9;
-  --app-fg: #0f172a;
+  --app-bg: #fff;
+  --app-bg-soft: #f8fafc;
+  --app-fg: #111827;
   --app-card: #fff;
-  --app-card-fg: #0f172a;
+  --app-card-fg: #111827;
   --app-popover: #fff;
-  --app-popover-fg: #0f172a;
+  --app-popover-fg: #111827;
 
   /* Brand / actions */
   --app-primary: #2563eb;
-  --app-primary-soft: #60a5fa;
+  --app-primary-soft: #7dd3fc;
   --app-primary-fg: #fff;
-  --app-secondary: #e2e8f0;
-  --app-secondary-fg: #0f172a;
-  --app-accent: #dbeafe;
-  --app-accent-fg: #1e3a8a;
-  --app-muted: #f1f5f9;
-  --app-muted-fg: #64748b;
+  --app-secondary: #f3f4f6;
+  --app-secondary-fg: #111827;
+  --app-accent: #eff6ff;
+  --app-accent-fg: #1d4ed8;
+  --app-muted: #f8fafc;
+  --app-muted-fg: #6b7280;
   --app-danger: #dc2626;
 
   /* UI states */
-  --app-border: #dbe4f0;
-  --app-input: #dbe4f0;
-  --app-ring: #93c5fd;
+  --app-border: #e5e7eb;
+  --app-input: #e5e7eb;
+  --app-ring: #bfdbfe;
   --app-selection-fg: #2563eb;
   --app-selection-bg: rgb(37 99 235 / 10%);
 
   /* Shadow / depth */
-  --app-shadow-sm: 0 2px 8px rgb(15 23 42 / 8%);
-  --app-shadow-md: 0 12px 28px rgb(15 23 42 / 12%);
+  --app-shadow-sm: 0 2px 10px rgb(17 24 39 / 5%);
+  --app-shadow-md: 0 12px 28px rgb(17 24 39 / 8%);
 }
 
 .dark {

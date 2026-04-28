@@ -1,11 +1,11 @@
 .footer {
-  padding: 2rem 1rem 2.25rem;
+  padding: 1rem;
   margin-top: auto;
   background: var(--app-bg-soft);
   border-top: 1px solid var(--app-border);
 
   &__inner {
-    width: min(1120px, 100%);
+    width: min(1440px, 100%);
     margin: 0 auto;
     text-align: center;
   }
@@ -24,7 +24,7 @@
   }
 
   &__text {
-    margin: 0.85rem 0 0;
+    margin: 0.8rem 0 0;
     font-size: 0.75rem;
     color: var(--app-muted-fg);
   }
