@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Braces, Image } from 'lucide-react'
 import { HeroConfig, ProductSignals, CapabilityCards, ToolCatalog } from '@/configs/home'
 import './Home.scss'
@@ -7,8 +7,6 @@ import { Button } from 'antd'
 const APP_NAME = import.meta.env.VITE_APP_TITLE_UP as string
 
 const Home: React.FC = () => {
-  const navigate = useNavigate()
-  
   return (
     <div className="home">
       <section className="home__hero" aria-labelledby="home-hero-heading">
@@ -156,19 +154,6 @@ const Home: React.FC = () => {
               本仓库由 zeMinng 发起，采用 MIT
               协议。若你在日常工作中依赖本地工具链，欢迎通过 Issue 描述场景、通过 PR 改进交互或补齐算法；Star
               也会帮助项目被更多人看到。当前主线已接通 JSON 工作台路由；图像与更多格式转换将按模块合入，不在首页伪造「立即体验」入口。
-            </p>
-            <p className="home__about-actions">
-              <Link className="btn-primary" to="/tools/json">
-                进入 JSON 工作台
-              </Link>
-              <a
-                className="btn-outline"
-                href="https://github.com/zeMinng/quick-kit"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub 仓库
-              </a>
             </p>
           </div>
         </div>
