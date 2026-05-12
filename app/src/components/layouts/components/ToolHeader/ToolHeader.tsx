@@ -9,7 +9,7 @@ const githubRepoUrl = `https://github.com/${GITHUB_REPO}`
 
 const navLinks = [
   { label: '首页', to: '/' },
-  { label: '特性', to: '/#features' },
+  { label: '工具台', to: '/tools' },
   { label: '关于', to: '/#about' },
 ]
 
@@ -77,11 +77,11 @@ const ToolHeader: React.FC = () => {
         </nav>
 
         <div className="tool-header__meta">
-          <a className="tool-header__meta-item tool-header__meta-item--link" href={githubRepoUrl} target="_blank" rel="noreferrer">
+          <div className="tool-header__meta-item tool-header__meta-item--link" onClick={() => window.open(githubRepoUrl)}>
             <Star size={14} />
             <span className="tool-header__meta-text">Stars</span>
             <span className="tool-header__meta-value">{starCount}</span>
-          </a>
+          </div>
         </div>
 
         <button

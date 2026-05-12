@@ -3,6 +3,7 @@ import { ErrorThrower } from '@/components/common/ErrorBoundary'
 import { NotFound, JsonConverterPage } from './routes.lazy'
 import Layout from '@/components/layouts'
 import Home from '@/pages/Home/Home'
+import ToolConsolePage from '@/pages/ToolConsole/ToolConsolePage'
 
 const routes: RouteObject[] = [
   {
@@ -13,6 +14,10 @@ const routes: RouteObject[] = [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: 'tools',
+        element: <ToolConsolePage />,
       },
       {
         path: 'tools/json',

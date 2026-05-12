@@ -1,71 +1,14 @@
-import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { Braces, Cpu, Image } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Braces, Image } from 'lucide-react'
+import { HeroConfig, ProductSignals, CapabilityCards, ToolCatalog } from '@/configs/home'
 import './Home.scss'
+import { Button } from 'antd'
 
 const APP_NAME = import.meta.env.VITE_APP_TITLE_UP as string
 
-const productSignals = [
-  { label: '数据路径', value: '本机浏览器，默认不上传' },
-  { label: '开源许可', value: 'MIT，可 fork 自建' },
-  { label: '交付形态', value: '支持安装为 PWA，可离线打开' },
-]
-
-const capabilityCards = [
-  {
-    title: '图像与媒体',
-    description:
-      '面向日常素材流：格式互转、尺寸调整、智能压缩与网格拼接。处理管线走 Canvas，预览与参数调整同步可见。',
-    icon: Image,
-  },
-  {
-    title: 'JSON 与结构化数据',
-    description:
-      '格式化、校验、压缩与展示模式切换；结果支持一键复制。逻辑在浏览器内完成，适合接口联调与日志整理。',
-    icon: Braces,
-  },
-  {
-    title: '性能与工程底座',
-    description:
-      '重计算放入 Web Worker，避免阻塞主线程交互。后续将把解析与转换热点逐步迁到 Rust + WebAssembly，以接近原生的吞吐。',
-    icon: Cpu,
-  },
-]
-
-const toolCatalog = [
-  {
-    id: 'json',
-    name: 'JSON 工作台',
-    description: '格式化、校验、压缩、转义与美化选项；适合在发布前快速过一遍 payload。',
-    href: '/tools/json',
-    actionLabel: '打开工具',
-    available: true,
-  },
-  {
-    id: 'image',
-    name: '图像工具组',
-    description: '互转、裁切、拼接与压缩等能力正在按模块合入主线；进度与需求可在 GitHub 跟踪。',
-    href: null,
-    actionLabel: null,
-    available: false,
-  },
-] as const
-
 const Home: React.FC = () => {
   const navigate = useNavigate()
-  const location = useLocation()
-
-  const goSection = (id: string) => {
-    const scroll = () => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    if (location.pathname !== '/') {
-      navigate('/')
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => scroll())
-      })
-    } else {
-      scroll()
-    }
-  }
-
+  
   return (
     <div className="home">
       <section className="home__hero" aria-labelledby="home-hero-heading">
@@ -74,27 +17,30 @@ const Home: React.FC = () => {
             <div className="home__hero-main">
               <p className="home__eyebrow">{APP_NAME}</p>
               <h1 id="home-hero-heading" className="home__title">
-                文件留在本地，
-                <br />
-                常用能力不打折。
+                {HeroConfig.heading}
               </h1>
               <p className="home__lede">
-                {APP_NAME}
-                是一套纯前端的实用工具集合：无自有后端、无强制上传。图像与 JSON 等场景在浏览器里直接处理；配合
-                PWA，断网也能打开已安装的版本。适合对隐私敏感、又希望「点开即用」的团队与个人。
+                {APP_NAME}{HeroConfig.description}
               </p>
               <div className="home__hero-cta">
-                <Link className="btn-primary" to="/tools/json">
-                  打开 JSON 工作台
-                </Link>
-                <button type="button" className="btn-outline" onClick={() => goSection('tools')}>
-                  查看工具目录
-                </button>
+                <Button href="/tools" color="default" variant="solid" size="large">
+                  打开工具台
+                </Button>
+                <Button 
+                  href="https://github.com/zeMinng/quick-kit"
+                  color="default"
+                  variant="filled"
+                  size="large"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </Button>
               </div>
             </div>
             <aside className="home__hero-panel" aria-label="要点">
               <dl className="home__signals">
-                {productSignals.map(s => (
+                {ProductSignals.map(s => (
                   <div key={s.label} className="home__signal">
                     <dt>{s.label}</dt>
                     <dd>{s.value}</dd>
@@ -126,7 +72,7 @@ const Home: React.FC = () => {
           </div>
         </header>
         <div className="home__card-grid home__card-grid--bento">
-          {capabilityCards.map(({ title, description, icon: Icon }, i) => (
+          {CapabilityCards.map(({ title, description, icon: Icon }, i) => (
             <article key={title} className="home__feature-card" data-bento={i === 2 ? 'wide' : undefined}>
               <span className="home__feature-index" aria-hidden>
                 {String(i + 1).padStart(2, '0')}
@@ -161,7 +107,7 @@ const Home: React.FC = () => {
           </div>
         </header>
         <div className="home__tool-list" role="list">
-          {toolCatalog.map((tool, row) => (
+          {ToolCatalog.map((tool, row) => (
             <div key={tool.id} className="home__tool-row" role="listitem">
               <span className="home__tool-line" aria-hidden>
                 {String(row + 1).padStart(2, '0')}
