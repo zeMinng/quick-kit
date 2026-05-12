@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import type { ChangeEvent } from 'react'
 import { Check, Copy, Trash2 } from 'lucide-react'
-import { Button } from '@workspace/ui/components/button'
-import { Checkbox } from '@workspace/ui/components/checkbox'
-import { Textarea } from '@workspace/ui/components/textarea'
 import { getJsonConversion, JSON_CONVERT_OPTIONS, type ConvertMode } from './jsonConverter'
 import './JsonConverterPage.scss'
 
@@ -25,17 +23,23 @@ const JsonConverterPage: React.FC = () => {
     setCopied(false)
   }
 
-  const toggleBeautifyEscaped = (checked: boolean | 'indeterminate') => {
-    const next = checked === true
-    setIsBeautify(next)
+  const toggleBeautifyEscaped = (e: ChangeEvent<HTMLInputElement>) => {
+    setIsBeautify(e.target.checked)
     setCopied(false)
     setActionError('')
   }
 
+  const conversion = getJsonConversion({
+    mode: activeMode,
+    input: source,
+    beautify: isBeautify,
+  })
+
+  const result = conversion.result
+  const error = conversion.error || actionError
+
   const copyResult = async () => {
     if (conversion.error || !conversion.result) return
-
-    if (!result) return
 
     try {
       await navigator.clipboard.writeText(conversion.result)
@@ -56,34 +60,29 @@ const JsonConverterPage: React.FC = () => {
     }
   }, [])
 
-  const conversion = getJsonConversion({
-    mode: activeMode,
-    input: source,
-    beautify: isBeautify,
-  })
-
-  const result = conversion.result
-  const error = conversion.error || actionError
+  const onSourceChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setSource(e.target.value)
+    setCopied(false)
+    setActionError('')
+  }
 
   return (
-    <div className="home-page">
-      <section className="flex flex-col gap-3 pt-8 pb-2">
-        <h1 className="text-2xl md:text-3xl font-black tracking-tight text-slate-900 dark:text-white">
-          JSON 转换器
-        </h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400">
-          支持格式化、压缩、转义与反转义，所有处理均在本地完成。
+    <div className="json-page">
+      <header className="json-page__intro">
+        <h1 className="json-page__title">JSON 工作台</h1>
+        <p className="json-page__lede">
+          支持格式化、压缩、转义与反转义；所有处理均在浏览器本地完成，内容不会上传到服务器。
         </p>
-      </section>
-      <section className="json-tool">
+      </header>
+      <section className="json-tool" aria-label="JSON 转换">
         <div className="json-tool__body">
           <div className="json-tool__toolbar">
             <div className="json-tool__actions">
               {Object.entries(JSON_CONVERT_OPTIONS).map(([key, item]) => (
-                <Button
+                <button
                   key={key}
-                  variant={activeMode === item.value ? 'default' : 'outline'}
                   type="button"
+                  className={activeMode === item.value ? 'btn-primary' : 'btn-outline'}
                   onClick={() => {
                     setActiveMode(item.value)
                     setCopied(false)
@@ -91,16 +90,22 @@ const JsonConverterPage: React.FC = () => {
                   }}
                 >
                   {item.label}
-                </Button>
+                </button>
               ))}
             </div>
             <div className="json-tool__toolbar-right">
-              <button className="json-tool__beautify" type="button" onClick={clearInput}>
-                <Trash2 size={14} />
+              <button className="json-tool__icon-btn" type="button" onClick={clearInput}>
+                <Trash2 size={14} aria-hidden />
                 清空
               </button>
-              <label className="json-tool__beautify" htmlFor="escape-beautify">
-                <Checkbox id="escape-beautify" checked={isBeautify} onCheckedChange={toggleBeautifyEscaped} />
+              <label className="json-tool__checkbox-label" htmlFor="escape-beautify">
+                <input
+                  id="escape-beautify"
+                  type="checkbox"
+                  className="json-tool__checkbox"
+                  checked={isBeautify}
+                  onChange={toggleBeautifyEscaped}
+                />
                 <span>结果美化</span>
               </label>
             </div>
@@ -108,41 +113,41 @@ const JsonConverterPage: React.FC = () => {
           <div className="json-tool__panes">
             <div className="json-tool__pane">
               <div className="json-tool__pane-top">
-                <div className="label">输入</div>
+                <div className="json-tool__label">输入</div>
               </div>
-              <Textarea
+              <textarea
                 id="json-source"
                 value={source}
-                onChange={(event) => {
-                  setSource(event.target.value)
-                  setCopied(false)
-                  setActionError('')
-                }}
+                onChange={onSourceChange}
                 placeholder={
-                  JSON_CONVERT_OPTIONS[activeMode]?.description + '\n' + JSON_CONVERT_OPTIONS[activeMode]?.placeholder
+                  (JSON_CONVERT_OPTIONS[activeMode]?.description ?? '') +
+                  '\n' +
+                  (JSON_CONVERT_OPTIONS[activeMode]?.placeholder ?? '')
                 }
                 aria-invalid={!!error}
                 className="json-tool__textarea"
+                spellCheck={false}
               />
             </div>
             <div className="json-tool__pane">
               <div className="json-tool__pane-top">
-                <div className="label">输出</div>
+                <div className="json-tool__label">输出</div>
               </div>
-              <Textarea
+              <textarea
                 id="json-result"
                 value={result}
                 readOnly
                 placeholder="转换结果会显示在这里"
-                className="json-tool__textarea"
+                className="json-tool__textarea json-tool__textarea--readonly"
+                spellCheck={false}
               />
             </div>
           </div>
           <div className="json-tool__footer">
-            <Button variant="outline" type="button" onClick={copyResult} disabled={!result}>
-              {copied ? <Check size={14} /> : <Copy size={14} />}
+            <button type="button" className="btn-outline" onClick={() => void copyResult()} disabled={!result}>
+              {copied ? <Check size={14} aria-hidden /> : <Copy size={14} aria-hidden />}
               {copied ? '已复制' : '复制结果'}
-            </Button>
+            </button>
             {error ? <p className="json-tool__error">{error}</p> : null}
           </div>
         </div>

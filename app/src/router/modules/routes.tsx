@@ -14,10 +14,10 @@ const routes: RouteObject[] = [
         index: true,
         element: <Home />,
       },
-      // {
-      //   path: 'tools/json',
-      //   element: <JsonConverterPage />,
-      // },
+      {
+        path: 'tools/json',
+        element: <JsonConverterPage />,
+      },
     ],
   },
   {
