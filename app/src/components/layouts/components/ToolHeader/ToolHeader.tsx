@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Box, Menu, Star, X } from 'lucide-react'
+import { APP_TITLE_UP, githubRepoUrl } from '@/constants'
+import { useGithubStars } from '@/hooks/useGithubStars'
 import './ToolHeader.scss'
-
-const APP_NAME = import.meta.env.VITE_APP_TITLE_UP
-const GITHUB_REPO = 'zeMinng/quick-kit'
-const githubRepoUrl = `https://github.com/${GITHUB_REPO}`
 
 const navLinks = [
   { label: '首页', to: '/' },
@@ -15,26 +13,8 @@ const navLinks = [
 
 const ToolHeader: React.FC = () => {
   const navigate = useNavigate()
-  const [starCount, setStarCount] = useState<string>('-')
+  const starCount = useGithubStars()
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const loadStars = async () => {
-      try {
-        const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}`, {
-          headers: { Accept: 'application/vnd.github.v3+json' },
-        })
-        const data = await res.json()
-        setStarCount(
-          typeof data.stargazers_count === 'number' ? String(data.stargazers_count) : '-',
-        )
-      } catch {
-        setStarCount('-')
-      }
-    }
-
-    void loadStars()
-  }, [])
 
   const go = (to: string) => {
     setMenuOpen(false)
@@ -57,7 +37,7 @@ const ToolHeader: React.FC = () => {
           <div className="tool-header__logo">
             <Box size={18} />
           </div>
-          <span className="tool-header__title">{APP_NAME}</span>
+          <span className="tool-header__title">{APP_TITLE_UP}</span>
         </div>
 
         <nav className="tool-header__nav" aria-label="主导航">
