@@ -26,10 +26,10 @@ const ToolHeader: React.FC = () => {
         })
         const data = await res.json()
         setStarCount(
-          typeof data.stargazers_count === 'number' ? String(data.stargazers_count) : '—',
+          typeof data.stargazers_count === 'number' ? String(data.stargazers_count) : '-',
         )
       } catch {
-        setStarCount('—')
+        setStarCount('-')
       }
     }
 

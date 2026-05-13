@@ -1,13 +1,13 @@
 .footer {
   flex-shrink: 0;
-  padding: 32px;
+  padding: var(--space-base);
   margin-top: auto;
   color: var(--color-body);
   background-color: var(--color-canvas);
   border-top: 1px solid var(--color-hairline);
 
   @media (width <= 639px) {
-    padding: var(--space-xxl) var(--space-lg);
+    padding: var(--space-base) var(--space-lg);
   }
 
   &__inner {
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-xs);
+    gap: var(--space-xxs);
     padding: 0;
     margin: 0;
   }
@@ -28,7 +28,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0 var(--space-xs);
     margin: 0;
     font-size: var(--type-caption-size);
     line-height: 1.5;
@@ -45,10 +44,9 @@
 
   &__brand {
     font-size: var(--type-caption-size);
-    font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0;
-    color: var(--color-ink);
+    color: var(--color-muted);
   }
 
   &__build {
