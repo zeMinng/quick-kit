@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { RouterProvider } from 'react-router-dom'
 import { ConfigProvider, App as AntdApp } from 'antd'
 import zhCN from 'antd/es/locale/zh_CN'
+import { antdTheme } from '@/theme/antd-theme'
 import { router } from './router'
 import ErrorBoundary from '@/components/common/ErrorBoundary'
 import GlobalLoading from '@/components/common/GlobalLoading'
@@ -9,9 +10,7 @@ import GlobalLoading from '@/components/common/GlobalLoading'
 
 function App() {
   return (
-    <ConfigProvider
-      locale={zhCN}
-    >
+    <ConfigProvider locale={zhCN} theme={antdTheme}>
       <AntdApp>
         <ErrorBoundary>
           <div className="app">
