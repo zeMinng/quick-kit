@@ -49,25 +49,25 @@
 }
 
 .json-tool__textarea {
-  box-sizing: border-box;
   width: 100%;
-  min-height: 280px;
   height: clamp(280px, 42vh, 640px);
   max-height: 78vh;
+  min-height: 280px;
   padding: 12px 16px;
   font-family: ui-monospace, 'Cascadia Code', 'SF Mono', menlo, monaco, consolas, 'Liberation Mono', 'Courier New',
     monospace;
   font-size: 0.8125rem;
   line-height: 1.5;
   color: var(--color-ink);
-  resize: vertical;
   background-color: var(--color-canvas);
   border: 1px solid var(--color-hairline-strong);
   border-radius: var(--radius-md);
   outline: none;
+  box-sizing: border-box;
   transition:
     border-color 0.15s ease,
     box-shadow 0.15s ease;
+  resize: vertical;
 }
 
 .json-tool__textarea:focus-visible {
@@ -125,16 +125,16 @@
 
 .json-tool__checkbox-label {
   display: inline-flex;
-  gap: var(--space-sm);
-  align-items: center;
   padding: 8px 12px;
   font-size: var(--type-caption-size);
   font-weight: 500;
   color: var(--color-ink);
   cursor: pointer;
-  user-select: none;
   border: 1px solid var(--color-hairline-strong);
   border-radius: var(--radius-md);
+  user-select: none;
+  gap: var(--space-sm);
+  align-items: center;
 }
 
 .json-tool__checkbox {

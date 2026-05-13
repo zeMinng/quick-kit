@@ -1,9 +1,10 @@
 import type { RouteObject } from 'react-router-dom'
 import { ErrorThrower } from '@/components/common/ErrorBoundary'
-import { NotFound, JsonConverterPage } from './routes.lazy'
+import { NotFound } from './routes.lazy'
 import Layout from '@/components/layouts'
 import Home from '@/pages/Home/Home'
-import ToolConsolePage from '@/pages/ToolConsole/ToolConsolePage'
+import ToolConsolePage from '@/pages/Console/Console'
+import ToolRoutePage from '@/pages/Tool/[id]'
 
 const routes: RouteObject[] = [
   {
@@ -20,8 +21,8 @@ const routes: RouteObject[] = [
         element: <ToolConsolePage />,
       },
       {
-        path: 'tools/json',
-        element: <JsonConverterPage />,
+        path: 'tools/:id',
+        element: <ToolRoutePage />,
       },
     ],
   },
