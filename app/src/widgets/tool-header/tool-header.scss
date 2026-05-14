@@ -21,7 +21,6 @@
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  margin-top: 0.15rem;
   color: var(--color-body-strong);
   background-color: var(--color-surface-card);
   border: 1px solid var(--color-hairline);
@@ -41,17 +40,6 @@
   letter-spacing: -0.03em;
   color: var(--color-ink);
   text-wrap: balance;
-}
-
-.tool-header__title-prefix {
-  font-weight: 600;
-  letter-spacing: -0.04em;
-}
-
-.tool-header__title-suffix {
-  margin-inline-start: 0.35em;
-  font-weight: 600;
-  letter-spacing: -0.02em;
 }
 
 .tool-header__description {

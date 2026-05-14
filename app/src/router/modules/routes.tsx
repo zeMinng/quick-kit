@@ -4,7 +4,7 @@ import { NotFound } from './routes.lazy'
 import Layout from '@/components/layouts'
 import Home from '@/pages/home/home'
 import ToolConsolePage from '@/pages/console/console'
-import ToolRoutePage from '@/pages/tool/[id]'
+import ToolRoutePage from '@/pages/tools/[id]'
 
 const routes: RouteObject[] = [
   {

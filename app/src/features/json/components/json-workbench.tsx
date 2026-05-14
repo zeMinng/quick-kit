@@ -6,8 +6,7 @@ export const JsonWorkbench: React.FC = () => {
     <div className="json-workbench">
       <ToolHeader
         info={{
-          prefix: 'JSON',
-          suffix: '工作台',
+          title: 'JSON 工作台',
           description: '格式化、压缩、转义与反转义一站完成；数据留在本机，不经过服务器。'
         }}
         icon={<Braces size={22} strokeWidth={1.75} />}

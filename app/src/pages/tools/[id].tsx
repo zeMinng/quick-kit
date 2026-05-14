@@ -19,7 +19,7 @@ const ToolRoutePage: FC = () => {
   if (import.meta.env.DEV && id && tool?.available && !Page) {
     console.warn(
       `[quick-kit] Tool "${id}" is available in toolEntries but missing from toolPageRegistry. ` +
-        'Add a lazy entry in src/pages/Tool/toolPageRegistry.ts.',
+        'Add a lazy entry in src/pages/tools/toolPageRegistry.ts.',
     )
   }
 

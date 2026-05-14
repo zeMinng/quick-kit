@@ -6,10 +6,10 @@ import { lazy, type FC, type LazyExoticComponent } from 'react'
  * ## Adding a tool
  *
  * 1. Add a `ToolEntry` in `src/configs/tools/index.ts` (set `href` to `/tools/<id>`).
- * 2. Implement the page (convention: `src/pages/Tools/<Name>/<Name>Page.tsx`).
+ * 2. Implement the page (convention: `src/pages/tools/<id>/…`).
  * 3. Register the same `<id>` here with `lazy(() => import('…'))`.
  *
- * The host route `tools/:id` (`src/pages/Tool/[id].tsx`) resolves the URL segment
+ * The host route `tools/:id` (`src/pages/tools/[id].tsx`) resolves the URL segment
  * against this map and `toolEntries`.
  */
 const registry = {
