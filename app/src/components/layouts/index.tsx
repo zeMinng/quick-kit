@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import ToolHeader from './components/ToolHeader/ToolHeader'
+import ToolHeader from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import './index.scss'
 

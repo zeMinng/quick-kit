@@ -2,7 +2,7 @@ import {  Button, Flex, Card, Row, Col, Typography, Avatar, Space, Tag, } from '
 import { HeroConfig, ProductSignals } from '@/configs/home'
 import { APP_TITLE_UP, githubRepoUrl, GITHUB_AVATAR_URL } from '@/constants'
 import allTools from '@/assets/allTools.png'
-import './Home.scss'
+import './home.scss'
 const { Text, Paragraph } = Typography
 
 const Home: React.FC = () => {

@@ -5,7 +5,7 @@ import type { LucideIcon } from 'lucide-react'
 import { Badge, Button, Empty, Input } from 'antd'
 import type { ToolEntry, ToolIconKey } from '@/configs/tools'
 import { toolCategories, toolEntries } from '@/configs/tools'
-import './Console.scss'
+import './console.scss'
 
 const iconByKey: Record<ToolIconKey, LucideIcon> = {
   braces: Braces,

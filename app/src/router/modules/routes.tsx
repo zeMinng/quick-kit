@@ -2,9 +2,9 @@ import type { RouteObject } from 'react-router-dom'
 import { ErrorThrower } from '@/components/common/ErrorBoundary'
 import { NotFound } from './routes.lazy'
 import Layout from '@/components/layouts'
-import Home from '@/pages/Home/Home'
-import ToolConsolePage from '@/pages/Console/Console'
-import ToolRoutePage from '@/pages/Tool/[id]'
+import Home from '@/pages/home/home'
+import ToolConsolePage from '@/pages/console/console'
+import ToolRoutePage from '@/pages/tool/[id]'
 
 const routes: RouteObject[] = [
   {

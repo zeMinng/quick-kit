@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Box, Menu, Star, X } from 'lucide-react'
 import { APP_TITLE_UP, githubRepoUrl } from '@/constants'
 import { useGithubStars } from '@/hooks/useGithubStars'
-import './ToolHeader.scss'
+import './Header.scss'
 
 const navLinks = [
   { label: '首页', to: '/' },
@@ -31,20 +31,20 @@ const ToolHeader: React.FC = () => {
   }
 
   return (
-    <header className="tool-header">
-      <div className="tool-header__inner">
-        <div className="tool-header__brand" onClick={() => go('/')}>
-          <div className="tool-header__logo">
+    <header className="header">
+      <div className="header__inner">
+        <div className="header__brand" onClick={() => go('/')}>
+          <div className="header__logo">
             <Box size={18} />
           </div>
-          <span className="tool-header__title">{APP_TITLE_UP}</span>
+          <span className="header__title">{APP_TITLE_UP}</span>
         </div>
 
-        <nav className="tool-header__nav" aria-label="主导航">
+        <nav className="header__nav" aria-label="主导航">
           {navLinks.map(({ label, to }) => (
             <a
               key={to}
-              className="tool-header__nav-link"
+              className="header__nav-link"
               href={to}
               onClick={e => {
                 e.preventDefault()
@@ -56,19 +56,19 @@ const ToolHeader: React.FC = () => {
           ))}
         </nav>
 
-        <div className="tool-header__meta">
-          <div className="tool-header__meta-item tool-header__meta-item--link" onClick={() => window.open(githubRepoUrl)}>
+        <div className="header__meta">
+          <div className="header__meta-item header__meta-item--link" onClick={() => window.open(githubRepoUrl)}>
             <Star size={14} />
-            <span className="tool-header__meta-text">Stars</span>
-            <span className="tool-header__meta-value">{starCount}</span>
+            <span className="header__meta-text">Stars</span>
+            <span className="header__meta-value">{starCount}</span>
           </div>
         </div>
 
         <button
           type="button"
-          className="tool-header__menu-btn"
+          className="header__menu-btn"
           aria-expanded={menuOpen}
-          aria-controls="tool-header-drawer"
+          aria-controls="header-drawer"
           aria-label={menuOpen ? '关闭菜单' : '打开菜单'}
           onClick={() => setMenuOpen(o => !o)}
         >
@@ -77,14 +77,14 @@ const ToolHeader: React.FC = () => {
       </div>
 
       <div
-        id="tool-header-drawer"
-        className={`tool-header__drawer${menuOpen ? ' tool-header__drawer--open' : ''}`}
+        id="header-drawer"
+        className={`header__drawer${menuOpen ? ' header__drawer--open' : ''}`}
         aria-hidden={!menuOpen}
       >
         {navLinks.map(({ label, to }) => (
           <a
             key={to}
-            className="tool-header__drawer-link"
+            className="header__drawer-link"
             href={to}
             onClick={e => {
               e.preventDefault()

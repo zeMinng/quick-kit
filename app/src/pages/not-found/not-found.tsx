@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { FileQuestion, Home, ArrowRight, Layers } from 'lucide-react'
-import './notFound.scss'
+import './not-found.scss'
 
 const NotFound: React.FC = () => {
   const navigate = useNavigate()
