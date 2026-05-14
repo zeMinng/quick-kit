@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react'
 import Editor, { type EditorProps } from '@monaco-editor/react'
 import type { Monaco } from '@monaco-editor/react'
-import { ensureMonacoWorkerEnvironment } from './monacoEnvironment'
+// import { ensureMonacoWorkerEnvironment } from './monacoEnvironment'
 import { getEditorOptionsForPreset, type AppEditorPreset } from './editorPresets'
 
 /** Default light theme shipped with Monaco. */
@@ -25,7 +25,7 @@ export function AppEditor({
 
   const handleBeforeMount = useCallback(
     (monaco: Monaco) => {
-      ensureMonacoWorkerEnvironment()
+      // ensureMonacoWorkerEnvironment()
       beforeMount?.(monaco)
     },
     [beforeMount],

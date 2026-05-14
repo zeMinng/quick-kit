@@ -1,1 +1,1 @@
-export * from './components/json-workbench'
+export { JsonEditor } from './components/json-editor'

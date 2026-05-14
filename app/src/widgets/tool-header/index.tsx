@@ -22,8 +22,6 @@ const ToolHeader: React.FC<ToolHeaderProps> = ({ className = '', info, icon }) =
         
         <div className="tool-header__content">
           <h1 id="tool-header-heading" className="tool-header__title">
-            {/* <span className="tool-header__title-prefix">{prefix}</span> */}
-            {/* <span className="tool-header__title-suffix">{suffix}</span> */}
             {title}
           </h1>
           <p className="tool-header__description">

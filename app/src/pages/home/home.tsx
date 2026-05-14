@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import {  Button, Flex, Card, Row, Col, Typography, Avatar, Space, Tag, } from 'antd'
 import { HeroConfig, ProductSignals } from '@/configs/home'
 import { APP_TITLE_UP, githubRepoUrl, GITHUB_AVATAR_URL } from '@/constants'
@@ -6,6 +7,8 @@ import './home.scss'
 const { Text, Paragraph } = Typography
 
 const Home: React.FC = () => {
+  const navigate = useNavigate()
+
   return (
     <div className="home">
       <section className="home__hero" aria-labelledby="home-hero-heading">
@@ -20,7 +23,13 @@ const Home: React.FC = () => {
                 {APP_TITLE_UP}{HeroConfig.description}
               </p>
               <div className="home__hero-cta">
-                <Button href="/tools" color="default" variant="solid" size="large">
+                <Button
+                  htmlType="button"
+                  color="default"
+                  variant="solid"
+                  size="large"
+                  onClick={() => navigate('/tools')}
+                >
                   打开工具台
                 </Button>
                 <Button
