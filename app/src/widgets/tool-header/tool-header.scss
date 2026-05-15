@@ -7,7 +7,7 @@
 
 .tool-header__container {
   display: flex;
-  max-width: min(var(--layout-max), 1120px);
+  max-width: min(100%, var(--tool-content-max));
   margin: 0 auto;
   box-sizing: border-box;
   margin-inline: auto;

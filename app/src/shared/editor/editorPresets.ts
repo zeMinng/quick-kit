@@ -6,9 +6,12 @@ type EditorOptions = NonNullable<EditorProps['options']>
 
 const baseOptions: EditorOptions = {
   fontSize: 14,
+  lineHeight: 22,
+  fontLigatures: true,
   automaticLayout: true,
   minimap: { enabled: false },
   scrollBeyondLastLine: false,
+  smoothScrolling: true,
   lineNumbers: 'on',
   folding: true,
   bracketPairColorization: { enabled: true },
@@ -17,6 +20,12 @@ const baseOptions: EditorOptions = {
     bracketPairs: true,
   },
   scrollbar: { verticalScrollbarSize: 8, horizontalScrollbarSize: 8 },
+  padding: { top: 10, bottom: 10 },
+  stickyScroll: { enabled: false },
+  contextmenu: false,
+  lineDecorationsWidth: 6,
+ 
+  wordWrap: 'on',
 }
 
 const inputPreset: EditorOptions = {
@@ -30,8 +39,6 @@ const outputPreset: EditorOptions = {
   readOnly: true,
   domReadOnly: true,
   cursorStyle: 'line',
-  contextmenu: true,
-  lineDecorationsWidth: 10,
   glyphMargin: false,
   links: false,
 }
