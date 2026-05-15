@@ -1,17 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import type { ChangeEvent } from 'react'
-import Editor from '@monaco-editor/react'
-import { Braces, Check, Copy, Trash2 } from 'lucide-react'
+// import type { ChangeEvent } from 'react'
+import { Check, Copy, Trash2 } from 'lucide-react'
 import { Button, Checkbox, Space, Typography } from 'antd'
-import { 
-  // EditorInputCodeOptions,
-  // EditorOutputCodeOptions,
-  JSON_CONVERT_OPTIONS,
-  getJsonConversion,
-  type ConvertMode
-} from '../jsonConversion'
+import { JSON_CONVERT_OPTIONS, type ConvertMode } from '@/pages/tools/json/configs'
 import { AppEditor } from '@/shared/editor'
-import './json-editor.scss'
+import './JsonEditor.scss'
 
 const ConverterToolBar: React.FC = () => {
   const [activeMode, setActiveMode] = useState<ConvertMode>('format')
@@ -78,7 +71,24 @@ export const JsonEditor: React.FC = () => {
           <div className="json-tool__body">
             <ConverterToolBar />
 
-            <AppEditor />
+            <div className="json-tool__panes">
+              <div className="json-tool__pane">
+                <div className="json-tool__pane-top">
+                  <div className="json-tool__label">输入</div>
+                </div>
+                <div className="json-tool__editor">
+                  <AppEditor />
+                </div>
+              </div>
+              <div className="json-tool__pane">
+                <div className="json-tool__pane-top">
+                  <div className="json-tool__label">输出</div>
+                </div>
+                <div className="json-tool__editor">
+                  <AppEditor />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

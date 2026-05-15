@@ -1,6 +1,6 @@
 import { Braces } from 'lucide-react'
 import ToolHeader from '@/widgets/tool-header'
-import { JsonEditor } from '@/features/json'
+import { JsonEditor } from '@/pages/tools/json/components/JsonEditor/JsonEditor'
 import { toolEntries } from '@/configs/tools'
 import './index.scss'
 

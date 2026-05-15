@@ -36,6 +36,12 @@ const outputPreset: EditorOptions = {
   links: false,
 }
 
+/**
+ * 获取编辑器配置选项
+ * @param preset input | output 来区分是输入和输出，以便设置不同的配置
+ * @param override 允许覆盖预设的默认配置
+ * @returns 根据预设和覆盖选项生成的编辑器配置对象
+ */
 export function getEditorOptionsForPreset(
   preset: AppEditorPreset,
   override?: EditorOptions,
