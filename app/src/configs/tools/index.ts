@@ -89,9 +89,9 @@ export const toolEntries: ToolEntry[] = [
     name: '色彩与取样',
     tagline: '吸管 · 对比度',
     description: '从画面取样并生成可复制的标记色值；与后续图像管线共用同一预览画布。',
-    href: null,
-    available: false,
-    tags: ['筹备中', '无障碍'],
+    href: '/tools/color-pick',
+    available: true,
+    tags: ['本地', '无上传', '无障碍'],
     iconKey: 'palette',
   },
   {

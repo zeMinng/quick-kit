@@ -14,6 +14,7 @@ import { lazy, type FC, type LazyExoticComponent } from 'react'
  */
 const registry = {
   json: lazy(() => import('@/pages/tools/json')),
+  'color-pick': lazy(() => import('@/pages/tools/color-pick')),
 } as const satisfies Record<string, LazyExoticComponent<FC>>
 
 export type RegisteredToolPageId = keyof typeof registry
